@@ -2,9 +2,9 @@
 
 Third-person desert survival: stay in the shade, keep the froggie hydrated, and run as far as you can before the sun wins.
 
-<video src="Edit.mp4" controls playsinline width="100%" title="Beat The Heat gameplay demo">
-  Your viewer does not play inline video. Open <a href="Edit.mp4">Edit.mp4</a> to watch the demo.
-</video>
+![Beat The Heat demo](Edit.webp)
+
+GitHub and the Markdown preview do not play raw `.mp4` files. The clip above is `Edit.mp4` as a looping WebP. [Open the original video](Edit.mp4) if you want audio and playback controls.
 
 ## How a run works
 
