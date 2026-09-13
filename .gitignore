@@ -1,0 +1,30 @@
+# Summer Engine defaults
+.godot/
+*.translation
+.DS_Store
+Thumbs.db
+*.bak
+
+# AI tooling
+.claude/
+.specstory/
+
+# Summer Engine local-only state (SummerGit, caches, locks)
+.summer/local/
+_asset_staging/
+tools/tmp_checks/
+
+# Dependencies & build output
+build/
+node_modules/
+.next/
+__pycache__/
+*.pyc
+
+# Environment
+.env*
+
+# Godot import metadata churn (regenerated per-editor; tracked copies stay tracked)
+*.import
+beat-the-heat-final.apk
+edit.mp4

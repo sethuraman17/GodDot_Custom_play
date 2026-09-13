@@ -1,0 +1,562 @@
+[gd_scene format=3 uid="uid://b0drprp0qdkoe"]
+
+[ext_resource type="Script" uid="uid://dkc5e4h2ot01m" path="res://scripts/mobile_controls.gd" id="1_mobc"]
+[ext_resource type="Script" uid="uid://daww3se5w1jr" path="res://scripts/mobile_quality.gd" id="1_mobq"]
+[ext_resource type="Script" uid="uid://bnym4m0x3fjfl" path="res://scripts/adventure_input_reader.gd" id="1_yq6so"]
+[ext_resource type="Script" uid="uid://le1e0ic3dvdk" path="res://scripts/adventure_terrain_grid.gd" id="2_fv21b"]
+[ext_resource type="Script" uid="uid://co4uejr1dsmms" path="res://scripts/terrain_flat_pad.gd" id="3_tel4y"]
+[ext_resource type="Script" uid="uid://skisntlhxned" path="res://scripts/adventure_environment_prop_setup.gd" id="4_qkpxi"]
+[ext_resource type="PackedScene" uid="uid://d28wjtqvm1aje" path="res://assets/third_person_adventure/environment/structures/abandoned_farmhouse.glb" id="5_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://cejrsiwhxyuwk" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_shed.glb" id="6_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://b26d7pxnrxcux" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_blue_barrel.glb" id="10_pibwh"]
+[ext_resource type="PackedScene" uid="uid://yu2gmvjlvdpr" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_red_barrel.glb" id="11_c6pm6"]
+[ext_resource type="PackedScene" uid="uid://00r3gopthbl0" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_concrete_slab.glb" id="12_5he1u"]
+[ext_resource type="PackedScene" uid="uid://d4m37low7kfw3" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_worn_tire.glb" id="14_2cjbq"]
+[ext_resource type="PackedScene" uid="uid://q5huwyn6aasx" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_pebble_large.glb" id="15_chjal"]
+[ext_resource type="Script" uid="uid://3okncxgolhvx" path="res://scripts/water_drop_spawner.gd" id="15_y6deb"]
+[ext_resource type="PackedScene" uid="uid://bhairydu77rap" path="res://assets/third_person_adventure/environment/wasteland_props/wasteland_pebble_small.glb" id="16_cjqg0"]
+[ext_resource type="Script" uid="uid://6uylu3ebqxow" path="res://scripts/third_person_controller.gd" id="19_vc5cj"]
+[ext_resource type="Script" uid="uid://dh0hmy5mxt8sn" path="res://scripts/adventure_model_material_applier.gd" id="20_nvyfr"]
+[ext_resource type="PackedScene" uid="uid://p0f00iy458dr" path="res://assets/Player/3d_1782992307143.glb" id="22_j2jfr"]
+[ext_resource type="Script" uid="uid://bud3hflgjpjbn" path="res://scripts/water_supply.gd" id="22_og1vs"]
+[ext_resource type="Script" uid="uid://dkf0mwggmjjn3" path="res://scripts/humanoid_locomotion_animator.gd" id="23_bjg73"]
+[ext_resource type="Script" uid="uid://dinj6sahr8v80" path="res://scripts/city_building_streamer.gd" id="23_dgi5k"]
+[ext_resource type="Script" uid="uid://cm6eaw3ubcby3" path="res://scripts/third_person_camera.gd" id="24_bu4jf"]
+[ext_resource type="Texture2D" uid="uid://c4xyv0qipp6fx" path="res://assets/Player/3d_1782992307143_texture_0.png" id="28_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://c7moly76xhxko" path="res://assets/models/arabian_blacksmith.glb" id="28_tel4y"]
+[ext_resource type="Script" uid="uid://byxxxiljaudrd" path="res://scripts/adventure_hud.gd" id="29_1v6qk"]
+[ext_resource type="Script" uid="uid://blc6ugd76vvpc" path="res://scripts/terrain_road_path.gd" id="30_road0"]
+[ext_resource type="Script" uid="uid://daw6evkrlmpk4" path="res://scripts/sun_exposure.gd" id="30_sunexp"]
+[ext_resource type="Script" uid="uid://dwrmspwn4x2ka" path="res://scripts/worm_spawner.gd" id="31_worm"]
+[ext_resource type="Script" uid="uid://bidp07udlg5fp" path="res://scripts/sun_cycle.gd" id="32_suncycle"]
+[ext_resource type="Script" uid="uid://bkfsrfm00mcc7" path="res://scripts/run_score.gd" id="34_kmb1v"]
+[ext_resource type="Script" uid="uid://bbs677chqu56l" path="res://scripts/player_character_swapper.gd" id="34_pibwh"]
+[ext_resource type="Script" uid="uid://b5c4ryfl7kiva" path="res://scripts/force_field_ability.gd" id="35_5he1u"]
+[ext_resource type="Script" uid="uid://bpmnh7nj310i3" path="res://scripts/main_menu.gd" id="36_kmb1v"]
+[ext_resource type="Script" uid="uid://bv0qa3wut0m4d" path="res://scripts/hid_feedback.gd" id="37_hidfb"]
+[ext_resource type="Script" uid="uid://dhsxemgnubmrn" path="res://scripts/pet_frog.gd" id="37_pibwh"]
+[ext_resource type="PackedScene" uid="uid://cq6lqk3gkemye" path="res://assets/models/pet_frog.glb" id="40_2cjbq"]
+[ext_resource type="Script" uid="uid://cqfwv5qu6kwnt" path="res://scripts/heat_wave_manager.gd" id="40_5poiv"]
+[ext_resource type="PackedScene" uid="uid://df0nwcyrpnx0p" path="res://assets/third_person_adventure/environment/structures/abandoned_gatehouse.glb" id="40_gate1"]
+[ext_resource type="PackedScene" uid="uid://bp4mapa2wsqu6" path="res://assets/third_person_adventure/environment/structures/ruined_office_building.glb" id="41_offc1"]
+[ext_resource type="PackedScene" uid="uid://c2lw3ogh86j3j" path="res://assets/models/ruined_building.glb" id="43_rnbd1"]
+[ext_resource type="PackedScene" uid="uid://cnmc4b2goehrn" path="res://assets/Downloaded models/3d_1781682855782.glb" id="47_pick1"]
+[ext_resource type="PackedScene" uid="uid://b2t6ot1ox315x" path="res://assets/Downloaded models/3d_1781736218100.glb" id="48_wrck1"]
+[ext_resource type="PackedScene" uid="uid://bmii7njiin675" path="res://assets/Downloaded models/3d_1782247608603.glb" id="49_sdan1"]
+[ext_resource type="Shader" uid="uid://bhajg8ry5u6sa" path="res://shaders/galactic_day_sky.gdshader" id="51_gsky1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gsky1"]
+shader = ExtResource("51_gsky1")
+shader_parameter/horizon_color = Color(0.97, 0.8, 0.68, 1)
+shader_parameter/sky_color = Color(0.34, 0.55, 0.85, 1)
+shader_parameter/zenith_color = Color(0.16, 0.28, 0.58, 1)
+shader_parameter/nebula_pink = Color(0.95, 0.45, 0.72, 1)
+shader_parameter/nebula_teal = Color(0.3, 0.82, 0.88, 1)
+shader_parameter/nebula_violet = Color(0.6, 0.42, 0.95, 1)
+shader_parameter/ground_color = Color(0.42, 0.33, 0.22, 1)
+shader_parameter/nebula_intensity = 0.75
+shader_parameter/sun_disk_size = 0.03
+shader_parameter/sun_glow = 0.4
+
+[sub_resource type="Sky" id="Sky_tm6hj"]
+sky_material = SubResource("ShaderMaterial_gsky1")
+
+[sub_resource type="Environment" id="Environment_kf5aa"]
+background_mode = 2
+sky = SubResource("Sky_tm6hj")
+ambient_light_source = 2
+ambient_light_color = Color(0.92, 0.84, 0.68, 1)
+ambient_light_energy = 1.05
+fog_enabled = true
+fog_light_color = Color(0.88, 0.75, 0.66, 1)
+fog_density = 0.006
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mlv25"]
+radius = 0.35
+height = 1.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgi5k"]
+albedo_texture = ExtResource("28_dgi5k")
+emission_enabled = true
+emission_texture = ExtResource("28_dgi5k")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a82wo"]
+radius = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5he1u"]
+radius = 0.24
+
+[node name="World" type="Node3D" unique_id=1128466166]
+
+[node name="MobileQuality" type="Node" parent="." unique_id=899179877]
+script = ExtResource("1_mobq")
+
+[node name="InputReader" type="Node" parent="." unique_id=1782902740]
+script = ExtResource("1_yq6so")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=771202434]
+environment = SubResource("Environment_kf5aa")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=909996636]
+transform = Transform3D(0.81915206, 0.45198438, -0.35312894, 0, 0.6156615, 0.7880107, 0.57357645, -0.6455006, 0.5043204, 0, 0, 0)
+light_color = Color(1, 0.87, 0.68, 1)
+light_energy = 4.1
+shadow_enabled = true
+shadow_opacity = 0.82
+script = ExtResource("32_suncycle")
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=558083293]
+transform = Transform3D(-0.64278764, -0.3596361, 0.67637706, 0, 0.88294756, 0.46947157, -0.76604444, 0.3017705, -0.5675478, 0, 0, 0)
+light_color = Color(0.85, 0.8, 0.68, 1)
+light_energy = 0.5
+
+[node name="Level" type="Node3D" parent="." unique_id=42821115]
+
+[node name="TerrainRoot" type="Node3D" parent="Level" unique_id=744672164]
+script = ExtResource("2_fv21b")
+
+[node name="Features" type="Node3D" parent="Level/TerrainRoot" unique_id=2112295394]
+
+[node name="ScoutCampFlatPad" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=1051828917]
+transform = Transform3D(0.95105654, 0, -0.309017, 0, 1, 0, 0.309017, 0, 0.95105654, 10, 0.12, -8)
+script = ExtResource("3_tel4y")
+size = Vector2(20, 14)
+blend_radius = 5.0
+
+[node name="RelicClearingFlatPad" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=2055300433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.12, -14)
+script = ExtResource("3_tel4y")
+size = Vector2(12, 10)
+
+[node name="StarterHomesteadFlatPad" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=290304213]
+transform = Transform3D(0.99026805, 0, 0.1391731, 0, 1, 0, -0.1391731, 0, 0.99026805, -13, 0.12, 14)
+script = ExtResource("3_tel4y")
+size = Vector2(44, 32)
+blend_radius = 7.0
+
+[node name="CityHighway" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=770114501]
+script = ExtResource("30_road0")
+road_width = 5.0
+surface_drop = 0.14
+show_surface = true
+
+[node name="P0" type="Marker3D" parent="Level/TerrainRoot/Features/CityHighway" unique_id=770114502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -46)
+
+[node name="P1" type="Marker3D" parent="Level/TerrainRoot/Features/CityHighway" unique_id=770114503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6)
+
+[node name="P2" type="Marker3D" parent="Level/TerrainRoot/Features/CityHighway" unique_id=770114504]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12)
+
+[node name="P3" type="Marker3D" parent="Level/TerrainRoot/Features/CityHighway" unique_id=770114505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 30)
+
+[node name="P4" type="Marker3D" parent="Level/TerrainRoot/Features/CityHighway" unique_id=770114506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 60)
+
+[node name="GateStreet" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=1335033897]
+script = ExtResource("30_road0")
+road_width = 4.5
+surface_drop = 0.17
+show_surface = true
+
+[node name="P0" type="Marker3D" parent="Level/TerrainRoot/Features/GateStreet" unique_id=1447893982]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -29)
+
+[node name="P1" type="Marker3D" parent="Level/TerrainRoot/Features/GateStreet" unique_id=33809396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -27)
+
+[node name="P2" type="Marker3D" parent="Level/TerrainRoot/Features/GateStreet" unique_id=1340675948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -25.2)
+
+[node name="EastAvenue" type="Node3D" parent="Level/TerrainRoot/Features" unique_id=272567357]
+script = ExtResource("30_road0")
+road_width = 4.5
+surface_drop = 0.2
+show_surface = true
+
+[node name="P0" type="Marker3D" parent="Level/TerrainRoot/Features/EastAvenue" unique_id=1978466445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7, 0, -25.2)
+
+[node name="P1" type="Marker3D" parent="Level/TerrainRoot/Features/EastAvenue" unique_id=701041941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -6)
+
+[node name="P2" type="Marker3D" parent="Level/TerrainRoot/Features/EastAvenue" unique_id=815057928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 14)
+
+[node name="P3" type="Marker3D" parent="Level/TerrainRoot/Features/EastAvenue" unique_id=1552907777]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
+
+[node name="Landmarks" type="Node3D" parent="Level" unique_id=1187003250]
+
+[node name="RuinedHouseA" type="Node3D" parent="Level/Landmarks" unique_id=1120345671 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-9.3262, 0, -27.9958, 0, 29.5083, 0, 27.9958, 0, -9.3262, -19.37, 4, 81.74)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseAModel" parent="Level/Landmarks/RuinedHouseA" unique_id=1120345672 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseB" type="Node3D" parent="Level/Landmarks" unique_id=1120345673 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-5.908, 0, 29.565, 0, 30.1495, 0, -29.565, 0, -5.908, 18.28, 4, -81.99)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseBModel" parent="Level/Landmarks/RuinedHouseB" unique_id=1120345674 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseC" type="Node3D" parent="Level/Landmarks" unique_id=1120345675 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(9.8735, 0, -29.6782, 0, 31.28, 0, 29.6782, 0, 9.8735, -82.28, 4, 16.93)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseCModel" parent="Level/Landmarks/RuinedHouseC" unique_id=1120345676 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedOfficeA" type="Node3D" parent="Level/Landmarks" unique_id=1120345677 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-13.26, 0, 66.3577, 0, 67.6695, 0, -66.3577, 0, -13.26, -27.7, 4, -42.9)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedOfficeAModel" parent="Level/Landmarks/RuinedOfficeA" unique_id=1120345678 instance=ExtResource("41_offc1")]
+
+[node name="RuinedOfficeB" type="Node3D" parent="Level/Landmarks" unique_id=1120345679 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-5.2835, 0, 65.6675, 0, 65.8798, 0, -65.6675, 0, -5.2835, 83.01, 4, -12.88)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedOfficeBModel" parent="Level/Landmarks/RuinedOfficeB" unique_id=1120345680 instance=ExtResource("41_offc1")]
+
+[node name="RuinedGatewallA" type="Node3D" parent="Level/Landmarks" unique_id=1120345681 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-31.0285, 0, -4.6372, 0, 31.373, 0, 4.6372, 0, -31.0285, 35.1, 4, -50.9)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedGatewallAModel" parent="Level/Landmarks/RuinedGatewallA" unique_id=1120345682 instance=ExtResource("40_gate1")]
+
+[node name="RuinedGatewallB" type="Node3D" parent="Level/Landmarks" unique_id=1120345683 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(6.7385, 0, 36.4378, 0, 37.0555, 0, -36.4378, 0, 6.7385, -27.54, 4, -79.36)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedGatewallBModel" parent="Level/Landmarks/RuinedGatewallB" unique_id=1120345684 instance=ExtResource("40_gate1")]
+
+[node name="AdobeRuinA" type="Node3D" parent="Level/Landmarks" unique_id=1120345685 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(8.6703, 0, -26.0608, 0, 27.4675, 0, 26.0608, 0, 8.6703, 12.31, 4, 83.09)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinAModel" parent="Level/Landmarks/AdobeRuinA" unique_id=1120345686 instance=ExtResource("28_tel4y")]
+
+[node name="AdobeRuinB" type="Node3D" parent="Level/Landmarks" unique_id=1120345687 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.1757, 0, -22.9778, 0, 23.3543, 0, 22.9778, 0, 4.1757, 38.39, 4, 74.71)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinBModel" parent="Level/Landmarks/AdobeRuinB" unique_id=1120345688 instance=ExtResource("28_tel4y")]
+
+[node name="RuinedHouseD" type="Node3D" parent="Level/Landmarks" unique_id=544273072 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(30.018, 0, 3.7389, 0, 30.25, 0, -3.7389, 0, 30.018, 50.29, 4, -67.28)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseDModel" parent="Level/Landmarks/RuinedHouseD" unique_id=734764801 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseE" type="Node3D" parent="Level/Landmarks" unique_id=228011548 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-2.8803, 0, 28.8567, 0, 29, 0, -28.8567, 0, -2.8803, 77, 4, 17.5)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseEModel" parent="Level/Landmarks/RuinedHouseE" unique_id=675715547 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseF" type="Node3D" parent="Level/Landmarks" unique_id=731295472 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(5.6336, 0, -28.1925, 0, 28.75, 0, 28.1925, 0, 5.6336, 0, 4, -70)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseFModel" parent="Level/Landmarks/RuinedHouseF" unique_id=693672912 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedOfficeC" type="Node3D" parent="Level/Landmarks" unique_id=832888976 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(66.4861, 0, 8.2812, 0, 67, 0, -8.2812, 0, 66.4861, 70.4, 4, -52.1)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedOfficeCModel" parent="Level/Landmarks/RuinedOfficeC" unique_id=530561941 instance=ExtResource("41_offc1")]
+
+[node name="RuinedGatewallC" type="Node3D" parent="Level/Landmarks" unique_id=967876053 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-6.038, 0, 33.2067, 0, 33.75, 0, -33.2067, 0, -6.038, 70, 4, 45.5)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedGatewallCModel" parent="Level/Landmarks/RuinedGatewallC" unique_id=625099866 instance=ExtResource("40_gate1")]
+
+[node name="AdobeRuinC" type="Node3D" parent="Level/Landmarks" unique_id=535232902 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(2.0451, 0, -25.4179, 0, 25.5, 0, 25.4179, 0, 2.0451, 51, 4, -14.8)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinCModel" parent="Level/Landmarks/AdobeRuinC" unique_id=501782015 instance=ExtResource("28_tel4y")]
+
+[node name="AdobeRuinD" type="Node3D" parent="Level/Landmarks" unique_id=2009801965 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.3806, 0, -24.1051, 0, 24.5, 0, 24.1051, 0, 4.3806, 43.3, 4, 40.7)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinDModel" parent="Level/Landmarks/AdobeRuinD" unique_id=208356895 instance=ExtResource("28_tel4y")]
+
+[node name="RuinedHouseG" type="Node3D" parent="Level/Landmarks" unique_id=1120345690 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(2.9796, 0, 29.8518, 0, 30, 0, -29.8518, 0, 2.9796, 52, 4, 2)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseGModel" parent="Level/Landmarks/RuinedHouseG" unique_id=1120345691 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseH" type="Node3D" parent="Level/Landmarks" unique_id=1120345692 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-14.5902, 0, -26.2131, 0, 30, 0, 26.2131, 0, -14.5902, -27, 4, 14)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseHModel" parent="Level/Landmarks/RuinedHouseH" unique_id=1120345693 instance=ExtResource("43_rnbd1")]
+
+[node name="RuinedHouseI" type="Node3D" parent="Level/Landmarks" unique_id=1120345694 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(9.4695, 0, 28.4664, 0, 30, 0, -28.4664, 0, 9.4695, -44, 4, 40)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedHouseIModel" parent="Level/Landmarks/RuinedHouseI" unique_id=1120345695 instance=ExtResource("43_rnbd1")]
+
+[node name="AdobeRuinE" type="Node3D" parent="Level/Landmarks" unique_id=1120345696 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.2912, 0, 23.6131, 0, 24, 0, -23.6131, 0, 4.2912, 48, 4, 26)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinEModel" parent="Level/Landmarks/AdobeRuinE" unique_id=1120345697 instance=ExtResource("28_tel4y")]
+
+[node name="RuinedGatewallD" type="Node3D" parent="Level/Landmarks" unique_id=1120345698 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-10.1008, 0, -30.3642, 0, 32, 0, 30.3642, 0, -10.1008, -12, 4, 60)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="RuinedGatewallDModel" parent="Level/Landmarks/RuinedGatewallD" unique_id=1120345699 instance=ExtResource("40_gate1")]
+
+[node name="EnvironmentProps" type="Node3D" parent="Level" unique_id=1427293984]
+
+[node name="AbandonedFarmhouse" type="Node3D" parent="Level/EnvironmentProps" unique_id=1446976032 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(0.9394, 0, -6.6843, 0, 6.75, 0, 6.6843, 0, 0.9394, -38.16, 4, 24.36)
+script = ExtResource("4_qkpxi")
+material_profile = "farmhouse"
+
+[node name="AbandonedFarmhouseModel" parent="Level/EnvironmentProps/AbandonedFarmhouse" unique_id=369851581 instance=ExtResource("5_5q0nq")]
+transform = Transform3D(-0.91361654, 0, 0.4065771, 0, 1, 0, -0.4065771, 0, -0.91361654, 0, 0, 0)
+
+[node name="WastelandShed" type="Node3D" parent="Level/EnvironmentProps" unique_id=713106799 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(19.0211, 0, -6.1803, 0, 20, 0, 6.1803, 0, 19.0211, -0.96, 4, 41.17)
+script = ExtResource("4_qkpxi")
+material_profile = "shed"
+
+[node name="WastelandShedModel" parent="Level/EnvironmentProps/WastelandShed" unique_id=1962587313 instance=ExtResource("6_dgi5k")]
+transform = Transform3D(0.50000006, 0, 0.8660255, 0, 1, 0, -0.8660255, 0, 0.50000006, 0.6779354, 0, -0.22027493)
+
+[node name="WastelandCorrugatedFenceA" type="Node3D" parent="Level/EnvironmentProps" unique_id=2077562455 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(1.3596747, 0, 4.184649, 0, 4.4, 0, -4.184649, 0, 1.3596747, -6, 4, 9.2)
+
+[node name="WastelandBarbedFenceA" type="Node3D" parent="Level/EnvironmentProps" unique_id=1013281076 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(-0.14657773, 0, 4.1974416, 0, 4.2, 0, -4.1974416, 0, -0.14657773, -13, 4, 4.8)
+
+[node name="WastelandModularFenceA" type="Node3D" parent="Level/EnvironmentProps" unique_id=356626531 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(0.14657788, 0, 4.1974416, 0, 4.2, 0, -4.1974416, 0, 0.14657788, -19, 4, 6.2)
+
+[node name="WastelandBlueBarrel" type="Node3D" parent="Level/EnvironmentProps" unique_id=599513868 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.5179296, 0, 1.2954955, 0, 4.7, 0, -1.2954955, 0, 4.5179296, -8, 4, 15.6)
+
+[node name="WastelandBlueBarrelModel" parent="Level/EnvironmentProps/WastelandBlueBarrel" unique_id=1127671841 instance=ExtResource("10_pibwh")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.7708616, 0, 0.65542555)
+
+[node name="WastelandRedBarrel" type="Node3D" parent="Level/EnvironmentProps" unique_id=1282314561 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.149853, 0, -2.2065163, 0, 4.7, 0, 2.2065163, 0, 4.149853, -9.2, 4, 16.8)
+
+[node name="WastelandRedBarrelModel" parent="Level/EnvironmentProps/WastelandRedBarrel" unique_id=304552840 instance=ExtResource("11_c6pm6")]
+transform = Transform3D(0.9999997, 0, 8.940697e-08, 0, 0.9999997, 0, -8.940697e-08, 0, 0.9999997, 1.202458, 0, -0.16644573)
+
+[node name="WastelandConcreteSlab" type="Node3D" parent="Level/EnvironmentProps" unique_id=1612967478 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(4.5033317, 0, 2.6, 0, 5.2, 0, -2.6, 0, 4.5033317, -10.8, 4, 11.2)
+
+[node name="WastelandConcreteSlabModel" parent="Level/EnvironmentProps/WastelandConcreteSlab" unique_id=1788196459 instance=ExtResource("12_5he1u")]
+
+[node name="WastelandUtilityLight" type="Node3D" parent="Level/EnvironmentProps" unique_id=1663615205 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -7.4, 4, 12.8)
+
+[node name="WastelandWornTire" type="Node3D" parent="Level/EnvironmentProps" unique_id=1307246233 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(3.0783076, 0, 3.9400535, 0, 5, 0, -3.9400535, 0, 3.0783076, -11.8, 4, 17)
+
+[node name="WastelandWornTireModel" parent="Level/EnvironmentProps/WastelandWornTire" unique_id=12886343 instance=ExtResource("14_2cjbq")]
+
+[node name="WastelandPebbleLarge" type="Node3D" parent="Level/EnvironmentProps" unique_id=523983060 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -4.6, 4, 14.6)
+
+[node name="WastelandPebbleLargeModel" parent="Level/EnvironmentProps/WastelandPebbleLarge" unique_id=454097370 instance=ExtResource("15_chjal")]
+
+[node name="WastelandPebbleSmall" type="Node3D" parent="Level/EnvironmentProps" unique_id=1391031544 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.8, 4, 11.4)
+
+[node name="WastelandPebbleSmallModel" parent="Level/EnvironmentProps/WastelandPebbleSmall" unique_id=369627308 instance=ExtResource("16_cjqg0")]
+
+[node name="WastelandDryGrass" type="Node3D" parent="Level/EnvironmentProps" unique_id=1934840365 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -6.8, 4, 10.6)
+
+[node name="WreckPickup" type="Node3D" parent="Level/EnvironmentProps" unique_id=18398863 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(3.7307, 0, -2.5164, 0, 4.5, 0, 2.5164, 0, 3.7307, 3.4, 4, -1)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="WreckPickupModel" parent="Level/EnvironmentProps/WreckPickup" unique_id=1164604447 instance=ExtResource("47_pick1")]
+
+[node name="WreckCars" type="Node3D" parent="Level/EnvironmentProps" unique_id=1746978175 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(3.4985, 0, -1.9392, 0, 4, 0, 1.9392, 0, 3.4985, -9.5, 4, 17)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="WreckCarsModel" parent="Level/EnvironmentProps/WreckCars" unique_id=985471300 instance=ExtResource("48_wrck1")]
+
+[node name="WreckSedan" type="Node3D" parent="Level/EnvironmentProps" unique_id=374687330 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(3.8042, 0, -1.2361, 0, 4, 0, 1.2361, 0, 3.8042, -20.5, 4, 44)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="WreckSedanModel" parent="Level/EnvironmentProps/WreckSedan" unique_id=275726943 instance=ExtResource("49_sdan1")]
+
+[node name="AdobeRuin" type="Node3D" parent="Level/EnvironmentProps" unique_id=1638240954 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(7.1021, 0, -21.3478, 0, 22.5, 0, 21.3478, 0, 7.1021, -48.82, 4, 68.35)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="AdobeRuinModel" parent="Level/EnvironmentProps/AdobeRuin" unique_id=1638240953 instance=ExtResource("28_tel4y")]
+
+[node name="WreckCarsB" type="Node3D" parent="Level/EnvironmentProps" unique_id=1701335539 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(0.7293, 0, -4.1362, 0, 4.2, 0, 4.1362, 0, 0.7293, 28, 4, -27.7)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="WreckCarsBModel" parent="Level/EnvironmentProps/WreckCarsB" unique_id=1437140909 instance=ExtResource("48_wrck1")]
+
+[node name="WreckSedanB" type="Node3D" parent="Level/EnvironmentProps" unique_id=1924060190 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(3.8637, 0, 1.0353, 0, 4, 0, -1.0353, 0, 3.8637, 32.9, 4, 5)
+script = ExtResource("4_qkpxi")
+desert_tint = true
+
+[node name="WreckSedanBModel" parent="Level/EnvironmentProps/WreckSedanB" unique_id=639202147 instance=ExtResource("49_sdan1")]
+
+[node name="Worms" type="Node3D" parent="Level" unique_id=800001000]
+script = ExtResource("31_worm")
+
+[node name="WaterDropSpawner" type="Node3D" parent="Level" unique_id=1420384197]
+script = ExtResource("15_y6deb")
+
+[node name="CityBuildings" type="Node3D" parent="Level" unique_id=883198659]
+script = ExtResource("23_dgi5k")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1758695199 groups=["snap_to_adventure_terrain"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1534, 6.578377)
+script = ExtResource("19_vc5cj")
+camera_path = NodePath("../CameraRig")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1646775283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_mlv25")
+
+[node name="SkinPivot" type="Node3D" parent="Player" unique_id=1928683850]
+transform = Transform3D(1.101, 0, 0, 0, 1.101, 0, 0, 0, 1.101, 0, 0, 0)
+script = ExtResource("20_nvyfr")
+target_path = NodePath("player_robot")
+material = SubResource("StandardMaterial3D_dgi5k")
+
+[node name="player_robot" parent="Player/SkinPivot" unique_id=114400354 instance=ExtResource("22_j2jfr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Animator" type="Node" parent="Player" unique_id=676481471]
+script = ExtResource("23_bjg73")
+animation_player_path = NodePath("../SkinPivot/player_robot/AnimationPlayer")
+idle_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_idle.fbx"
+walk_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_walk.fbx"
+run_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_run.fbx"
+jump_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_jump.fbx"
+fall_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_fall.fbx"
+land_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_land.fbx"
+long_idle_fbx = "res://assets/third_person_adventure/characters/player_robot/player_robot_long_idle.fbx"
+
+[node name="PlayerReadabilityLight" type="OmniLight3D" parent="Player" unique_id=1074269333]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0.8)
+light_color = Color(1, 0.9, 0.74, 1)
+light_energy = 0.45
+omni_range = 6.0
+
+[node name="InteractSensor" type="Area3D" parent="Player" unique_id=199099577]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/InteractSensor" unique_id=22169468]
+shape = SubResource("SphereShape3D_a82wo")
+
+[node name="SunExposure" type="Node" parent="Player" unique_id=749472161]
+script = ExtResource("30_sunexp")
+
+[node name="WaterSupply" type="Node" parent="Player" unique_id=1730332513]
+script = ExtResource("22_og1vs")
+
+[node name="RunScore" type="Node" parent="Player" unique_id=1619114637]
+script = ExtResource("34_kmb1v")
+
+[node name="CharacterSwapper" type="Node" parent="Player" unique_id=1119885749]
+script = ExtResource("34_pibwh")
+
+[node name="ForceFieldAbility" type="Node" parent="Player" unique_id=90021762]
+script = ExtResource("35_5he1u")
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=704522288]
+script = ExtResource("24_bu4jf")
+target_path = NodePath("../Player")
+
+[node name="PitchPivot" type="Node3D" parent="CameraRig" unique_id=642178258]
+transform = Transform3D(1, 0, 0, 0, 0.95105654, 0.309017, 0, -0.309017, 0.95105654, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraRig/PitchPivot" unique_id=316655021]
+spring_length = 5.0
+margin = 0.2
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig/PitchPivot/SpringArm3D" unique_id=1897834734]
+current = true
+fov = 68.0
+
+[node name="AimRay" type="RayCast3D" parent="CameraRig/PitchPivot/SpringArm3D/Camera3D" unique_id=123966199]
+target_position = Vector3(0, 0, -20)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=914822911]
+script = ExtResource("29_1v6qk")
+
+[node name="Root" type="Control" parent="HUD" unique_id=2061148845]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" type="CanvasLayer" parent="." unique_id=331408297]
+script = ExtResource("36_kmb1v")
+
+[node name="PetFrog" type="CharacterBody3D" parent="." unique_id=1602228907]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 4.5, 8)
+script = ExtResource("37_pibwh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PetFrog" unique_id=1494143565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24, 0)
+shape = SubResource("SphereShape3D_5he1u")
+
+[node name="SkinPivot" type="Node3D" parent="PetFrog" unique_id=580379040]
+
+[node name="FrogModel" parent="PetFrog/SkinPivot" unique_id=1555293014 instance=ExtResource("40_2cjbq")]
+
+[node name="HeatWave" type="Node" parent="." unique_id=512093030]
+script = ExtResource("40_5poiv")
+
+[node name="HidFeedback" type="Node" parent="." unique_id=1944080900]
+script = ExtResource("37_hidfb")
+
+[node name="MobileControls" type="CanvasLayer" parent="." unique_id=1522559767]
+script = ExtResource("1_mobc")
